@@ -12,8 +12,7 @@ RUN find /etc/systemd/system \
     -exec rm \{} \;
 
 RUN apt-get update && \
-    apt-get install -y \
-    dbus systemd && \
+    apt-get install -y dbus systemd wget && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
