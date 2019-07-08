@@ -8,8 +8,8 @@ running it in production!**
 
 ## Supported tags
 
-* `18.04`, `bionic`, `latest`
-* `16.04`, `xenial`
+* `bionic`, `latest`
+* `xenial`
 
 ## But why?
 
@@ -151,4 +151,4 @@ The journalctl logs should look like this on a clean shutdown:
 
 ## License
 
-Copyright © 2016-2018 [Solita](http://www.solita.fi) + [MageHost](https://www.magehost.pro). Licensed under [the MIT license](https://github.com/solita/docker-systemd/blob/master/LICENSE).
+Copyright © 2016-2019 [Solita](http://www.solita.fi) + [MageHost](https://www.magehost.pro). Licensed under [the MIT license](https://github.com/solita/docker-systemd/blob/master/LICENSE).
