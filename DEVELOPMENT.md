@@ -1,7 +1,7 @@
 # Build image from local Dockerfile
 
-docker  image  rm  --force  magehost/ubuntu-systemd  magehost/ubuntu-systemd:disco
-docker  build  --tag=magehost/ubuntu-systemd:disco .
+docker  image  rm  --force  magehost/ubuntu-systemd  magehost/ubuntu-systemd:focal
+docker  build  --tag=magehost/ubuntu-systemd:focal .
 docker  image  ls
  
 # Run
@@ -10,7 +10,7 @@ docker  container rm --force mhtest
 docker  run \
   --rm \
   --privileged \
-  --volume /:/host  magehost/ubuntu-systemd:disco  setup
+  --volume /:/host  magehost/ubuntu-systemd:focal  setup
 docker  run \
   --detach \
   --name mhtest \
@@ -18,7 +18,7 @@ docker  run \
   --tmpfs /run \
   --tmpfs /run/lock \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  magehost/ubuntu-systemd:disco
+  magehost/ubuntu-systemd:focal
 docker container ls
 
 # Check Systemctl
@@ -36,12 +36,12 @@ docker  exec  --tty  --interactive  mhtest  bash
 # Publish 
 
 docker  login
-docker  push  magehost/ubuntu-systemd:disco
+docker  push  magehost/ubuntu-systemd:focal
 # docker  push  magehost/ubuntu-systemd
 
 # Cleanup
 
 docker  container  rm  --force  mhtest
 docker  container  ls  --all
-docker  image  rm  --force  magehost/ubuntu-systemd  magehost/ubuntu-systemd:disco
+docker  image  rm  --force  magehost/ubuntu-systemd  magehost/ubuntu-systemd:focal
 docker  image  ls

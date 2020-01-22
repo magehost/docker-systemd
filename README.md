@@ -8,6 +8,7 @@ running it in production!**
 
 ## Supported tags
 
+* `focal`
 * `disco`
 * `bionic`, `latest`
 * `xenial`
