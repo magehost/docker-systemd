@@ -38,7 +38,7 @@ set up your Docker host. It uses [special privileges](https://docs.docker.com/en
 to create a cgroup hierarchy for `systemd`. We do this in a separate setup
 step so we can run `systemd` in unprivileged containers.
 
-    docker run --rm --privileged -v /:/host magehost/ubuntu-systemd setup
+    docker run --rm --privileged -v /:/host magehost/ubuntu-systemd:focal setup
 
 ## Running
 
@@ -71,7 +71,7 @@ This image is useless as it's only meant to serve as a base for your own
 images, but you can still create a container from it. First set up your Docker
 host as described in Setup above. Then run the following command:
 
-    docker run -d --name systemd --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t magehost/ubuntu-systemd
+    docker run -d --name systemd --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -t magehost/ubuntu-systemd:focal
 
 Check the logs to see if `systemd` started correctly:
 
